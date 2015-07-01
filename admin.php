@@ -3,6 +3,8 @@
 <head>
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="//tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea'});</script>
 </head>
 
 <body>
@@ -24,12 +26,14 @@
 
 <div class="change-post">
 <?php
-
+//Include DB Connection
 include('php/dbconnection.php');
 
+//Select all post details
 $sql = "SELECT id, title, content, category FROM posts";
 $result = $conn->query($sql);
 
+//Display the results
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
@@ -66,8 +70,6 @@ $(document).ready(function() {
 	});
 
 });
-
-	
 
 </script>
 </body>
