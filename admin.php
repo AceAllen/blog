@@ -47,17 +47,27 @@ $conn->close();
 <script type="text/javascript">
 
 $(document).ready(function() {
+	//Hide the admin menu full options
 	$(".make-post" ).hide();
 	$(".change-post" ).hide();
-});
 
+	//Close the current section when clicked
+	$(".close").click(function() {
+		$(".close").parent().hide("slow");
+	});
+
+	//Display the options once an item is clicked
 	$(".new-post" ).click(function() {
 		$(".make-post").show("slow");
 	});
+
 	$(".edit-post" ).click(function() {
 		$(".change-post").show("slow");
 	});
 
+});
+
+	
 
 </script>
 </body>
