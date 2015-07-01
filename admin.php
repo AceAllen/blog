@@ -8,7 +8,7 @@
 <body>
 
 <a href="#" class="new-post">New Post</a>
-<a href="#">Edit Post</a>
+<a href="#" class="edit-post">Edit Post</a>
 <a href="#">Delete Post</a>
 
 <div class="make-post">
@@ -19,9 +19,10 @@
 
 	<input type="submit">
 	</form>
+	<a href="#" class="close">Close</a>
 </div>
 
-<div class="edit-post">
+<div class="change-post">
 <?php
 
 include('php/dbconnection.php');
@@ -40,16 +41,21 @@ if ($result->num_rows > 0) {
 $conn->close();
 
 ?>
+<a href="#" class="close">Close</a>
 </div>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
 	$(".make-post" ).hide();
+	$(".change-post" ).hide();
 });
 
 	$(".new-post" ).click(function() {
 		$(".make-post").show("slow");
+	});
+	$(".edit-post" ).click(function() {
+		$(".change-post").show("slow");
 	});
 
 
